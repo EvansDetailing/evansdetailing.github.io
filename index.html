@@ -16,22 +16,14 @@
         
         body {
             background: linear-gradient(135deg, #2c3e50, #1a2a38);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
         }
 
         /* Main container for the flyer */
         .flyer-container {
             width: 100%;
-            max-width: 1200px; /* UPDATED: Increased width for larger screens */
             background: white;
-            border-radius: 15px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
         /* Header Section */
@@ -136,6 +128,13 @@
             border-radius: 10px;
             padding: 20px;
             border: 1px solid #e0e7ff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .package:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(44, 62, 80, 0.15);
         }
         
         .package-header {
@@ -226,6 +225,55 @@
             font-style: italic;
         }
         
+        /* Add-Ons Section */
+        .addons-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 10px;
+            grid-column: span 2;
+            border: 1px solid #e0e7ff;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .addon-item {
+            background: #f8faff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #1a3a7f;
+        }
+        
+        .addon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .addon-name {
+            font-weight: 700;
+            color: #1a3a7f;
+        }
+
+        .addon-price {
+            font-weight: 700;
+            color: #2c5aa0;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            padding-left: 10px;
+        }
+
+        .addon-description {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
         /* About Me Section */
         .about-me-section {
             background: #ffffff;
@@ -247,6 +295,34 @@
             color: #555;
             line-height: 1.6;
             margin-bottom: 10px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 10px;
+            grid-column: span 2;
+            border: 1px solid #e0e7ff;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: #1a3a7f;
+            margin-bottom: 8px;
+        }
+
+        .faq-answer {
+            color: #555;
+            line-height: 1.6;
         }
         
         /* Contact Form Section */
@@ -354,7 +430,6 @@
             box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
         }
         
-        /* UPDATED: Renamed guarantee to service-info for clarity */
         .service-info {
             margin-top: 25px;
             padding-top: 20px;
@@ -386,7 +461,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .maintenance-section, .about-me-section, .contact-form-section {
+            .maintenance-section, .addons-section, .about-me-section, .faq-section, .contact-form-section {
                 grid-column: span 1;
             }
             
@@ -418,7 +493,7 @@
                 margin: 0;
             }
             
-            .contact-form-section, .footer, .about-me-section {
+            .contact-form-section, .footer, .about-me-section, .faq-section, .addons-section {
                 display: none;
             }
         }
@@ -456,10 +531,10 @@
                     <i class="fas fa-car"></i> INTERIOR CLEANING
                 </h2>
                 <div class="packages-list">
-                    <div class="package">
+                    <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
                         <div class="package-header">
                             <div class="package-name">Mini Interior Detail</div>
-                            <div class="package-price">$70-$90</div>
+                            <div class="package-price">Starting at $70</div>
                         </div>
                         <ul class="package-features">
                             <li><i class="fas fa-check"></i> Comprehensive vacuuming</li>
@@ -468,16 +543,16 @@
                             <li><i class="fas fa-check"></i> Dashboard treatment</li>
                         </ul>
                     </div>
-                    <div class="package">
+                    <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
                         <div class="package-header">
                             <div class="package-name">Full Interior Cleaning</div>
-                            <div class="package-price">$180-$400</div>
+                            <div class="package-price">Starting at $180</div>
                         </div>
                         <ul class="package-features">
                             <li><i class="fas fa-check"></i> Deep cleaning of all surfaces</li>
                             <li><i class="fas fa-check"></i> Professional stain extraction</li>
-                            <li><i class="fas fa-check"></i> Conditioning of leather/vinyl</li>
-                            <li><i class="fas fa-check"></i> Odor neutralization</li>
+                            <li><i class="fas fa-check"></i> Leather cleaning & conditioning</li>
+                            <li><i class="fas fa-check"></i> UV protectant for dashboard</li>
                         </ul>
                     </div>
                 </div>
@@ -487,10 +562,10 @@
                     <i class="fas fa-car-side"></i> EXTERIOR CLEANING
                 </h2>
                 <div class="packages-list">
-                    <div class="package">
+                    <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
                         <div class="package-header">
                             <div class="package-name">Premium Wash</div>
-                            <div class="package-price">$50-$90</div>
+                            <div class="package-price">Starting at $50</div>
                         </div>
                         <ul class="package-features">
                             <li><i class="fas fa-check"></i> Hand wash &amp; dry</li>
@@ -499,10 +574,10 @@
                             <li><i class="fas fa-check"></i> Exterior trim care</li>
                         </ul>
                     </div>
-                    <div class="package">
+                    <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
                         <div class="package-header">
                             <div class="package-name">Wash &amp; Wax</div>
-                            <div class="package-price">$140-$280</div>
+                            <div class="package-price">Starting at $140</div>
                         </div>
                         <ul class="package-features">
                             <li><i class="fas fa-check"></i> Premium hand wash</li>
@@ -534,6 +609,37 @@
                     * All maintenance plans include interior wipe-down and exterior wash
                 </div>
             </div>
+            
+            <!-- Add-Ons Section with Prices -->
+            <div class="addons-section">
+                <h2 class="section-title">
+                    <i class="fas fa-plus-circle"></i>
+                    ADD-ON SERVICES
+                </h2>
+                <div class="addons-grid">
+                    <div class="addon-item">
+                        <div class="addon-header">
+                            <div class="addon-name">Headlight Restoration</div>
+                            <div class="addon-price">$60</div>
+                        </div>
+                        <p class="addon-description">Restores clarity to foggy or yellowed headlights, improving visibility and appearance.</p>
+                    </div>
+                    <div class="addon-item">
+                        <div class="addon-header">
+                             <div class="addon-name">Pet Hair Removal</div>
+                            <div class="addon-price">$40+</div>
+                        </div>
+                        <p class="addon-description">Thorough removal of stubborn pet hair from carpets, seats, and upholstery.</p>
+                    </div>
+                    <div class="addon-item">
+                        <div class="addon-header">
+                            <div class="addon-name">Fabric & Carpet Protection</div>
+                            <div class="addon-price">$50</div>
+                        </div>
+                        <p class="addon-description">Applies a hydrophobic coating to fabrics to repel spills and prevent stains.</p>
+                    </div>
+                </div>
+            </div>
 
             <!-- About Me Section -->
             <div class="about-me-section">
@@ -547,9 +653,25 @@
                     <p>I believe in treating every vehicle with the same care and meticulous attention to detail as if it were my own. My goal isn't just to clean your car—it's to deliver a result that I'm proud of and that you'll love. Thank you for trusting me with your vehicle.</p>
                 </div>
             </div>
+            
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 class="section-title">
+                    <i class="fas fa-question-circle"></i>
+                    FREQUENTLY ASKED QUESTIONS
+                </h2>
+                <div class="faq-item">
+                    <h4 class="faq-question">What payment methods do you accept?</h4>
+                    <p class="faq-answer">For now, I accept Cash, Cash App, and Zelle.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">How long will the detail take?</h4>
+                    <p class="faq-answer">It can take anywhere from 1 to 4 hours. The duration depends on the service you choose and the size and condition of your vehicle.</p>
+                </div>
+            </div>
 
             <!-- Functional Contact Form Section -->
-            <div class="contact-form-section">
+            <div class="contact-form-section" id="contact-form-section">
                 <h2 class="section-title">
                     <i class="fas fa-paper-plane"></i>
                     SEND A MESSAGE
@@ -581,7 +703,6 @@
             <a href="tel:3866757674" class="call-to-action">
                 <i class="fas fa-phone"></i> CALL NOW TO BOOK
             </a>
-            <!-- UPDATED Section with Service Info & Requirements -->
             <div class="service-info">
                 <div class="info-item">
                     <i class="fas fa-truck"></i>
