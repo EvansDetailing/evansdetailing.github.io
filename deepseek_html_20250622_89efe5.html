@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evans Mobile Detailing - Port Orange, FL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2c3e50, #1a2a38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .flyer-container {
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header {
+            background: linear-gradient(to right, #1a3a7f, #2c5aa0);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .logo .tagline {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.9;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        
+        .contact-bar {
+            background: #142a5c;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            color: white;
+        }
+        
+        .contact-item i {
+            color: #ffd700;
+            font-size: 1.3rem;
+        }
+        
+        .content {
+            padding: 30px;
+            background: #f8faff;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            color: #1a3a7f;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1a3a7f;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            background: #1a3a7f;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .packages-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .package {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            /* Removed box-shadow and border */
+        }
+        
+        .package-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #e0e7ff;
+        }
+        
+        .package-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a3a7f;
+        }
+        
+        .package-price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #2c5aa0;
+        }
+        
+        .package-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .package-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .package-features li i {
+            color: #1a3a7f;
+            min-width: 20px;
+        }
+        
+        .maintenance-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+            /* Removed box-shadow and border */
+            grid-column: span 2;
+        }
+        
+        .maintenance-title {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #1a3a7f;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .maintenance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .maintenance-plan {
+            text-align: center;
+            padding: 15px;
+            /* Removed background color */
+        }
+        
+        .plan-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a3a7f;
+            margin-bottom: 5px;
+        }
+        
+        .plan-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #2c5aa0;
+        }
+        
+        .plan-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .footer {
+            background: #1a3a7f;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+        
+        .service-area {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: white;
+        }
+        
+        .call-to-action {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a3a7f;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            /* Removed box-shadow */
+            border: none; /* Removed border */
+        }
+        
+        .guarantee {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            color: white;
+        }
+        
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .maintenance-section {
+                grid-column: span 1;
+            }
+            
+            .maintenance-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-bar {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .logo h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        .print-notice {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ffd700;
+            color: #1a3a7f;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 14px;
+            z-index: 10;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .flyer-container {
+                box-shadow: none;
+                width: 100%;
+                margin: 0;
+            }
+            
+            .print-notice {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer-container">
+        <div class="print-notice">PRINT READY - FITS 8.5x11 PAPER</div>
+        
+        <div class="header">
+            <div class="logo">
+                <h1>EVANS MOBILE DETAILING</h1>
+                <div class="tagline">Premium Detailing Services at Your Doorstep</div>
+            </div>
+        </div>
+        
+        <div class="contact-bar">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>(386) 675-7674</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>logankent1906@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Serving Port Orange, FL</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-car"></i>
+                    INTERIOR CLEANING
+                </h2>
+                <div class="packages-list">
+                    <div class="package">
+                        <div class="package-header">
+                            <div class="package-name">Mini Interior Detail</div>
+                            <div class="package-price">$70-$90</div>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Comprehensive vacuuming</li>
+                            <li><i class="fas fa-check"></i> Surface wipe-down</li>
+                            <li><i class="fas fa-check"></i> Glass cleaning</li>
+                            <li><i class="fas fa-check"></i> Dashboard treatment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="package">
+                        <div class="package-header">
+                            <div class="package-name">Full Interior Cleaning</div>
+                            <div class="package-price">$180-$400</div>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Deep cleaning of all surfaces</li>
+                            <li><i class="fas fa-check"></i> Professional stain extraction</li>
+                            <li><i class="fas fa-check"></i> Conditioning of leather/vinyl</li>
+                            <li><i class="fas fa-check"></i> Odor neutralization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-car-side"></i>
+                    EXTERIOR CLEANING
+                </h2>
+                <div class="packages-list">
+                    <div class="package">
+                        <div class="package-header">
+                            <div class="package-name">Premium Wash</div>
+                            <div class="package-price">$50-$90</div>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Hand wash & dry</li>
+                            <li><i class="fas fa-check"></i> Wheel and tire cleaning</li>
+                            <li><i class="fas fa-check"></i> Spray wax finish</li>
+                            <li><i class="fas fa-check"></i> Exterior trim care</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="package">
+                        <div class="package-header">
+                            <div class="package-name">Wash & Wax</div>
+                            <div class="package-price">$140-$280</div>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Premium hand wash</li>
+                            <li><i class="fas fa-check"></i> Iron removal treatment</li>
+                            <li><i class="fas fa-check"></i> Hand-applied wax</li>
+                            <li><i class="fas fa-check"></i> Tire dressing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="maintenance-section">
+                <h2 class="section-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    MAINTENANCE PLANS
+                </h2>
+                <div class="maintenance-title">After Your First Full Detail</div>
+                <div class="maintenance-grid">
+                    <div class="maintenance-plan">
+                        <div class="plan-name">Weekly Maintenance</div>
+                        <div class="plan-price">$180-$220/month</div>
+                        <div class="plan-note">Includes 4 visits per month</div>
+                    </div>
+                    <div class="maintenance-plan">
+                        <div class="plan-name">Monthly Maintenance</div>
+                        <div class="plan-price">$90-$110/month</div>
+                        <div class="plan-note">Includes 1 visit per month</div>
+                    </div>
+                </div>
+                <div class="plan-note" style="text-align: center; margin-top: 15px;">
+                    * All maintenance plans include interior wipe-down and exterior wash
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-title">READY FOR A SHOWROOM FINISH?</div>
+            <div class="service-area">We come to you anywhere in Port Orange, FL</div>
+            <a href="tel:3866757674" class="call-to-action">
+                <i class="fas fa-phone"></i> CALL NOW TO BOOK
+            </a>
+            <div class="guarantee">
+                <div class="guarantee-item">
+                    <i class="fas fa-shield-alt"></i>
+                    Satisfaction Guaranteed
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-spray-can"></i>
+                    Professional Grade Products
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-truck"></i>
+                    Fully Mobile Service
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
