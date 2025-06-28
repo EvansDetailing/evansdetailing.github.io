@@ -6,6 +6,7 @@
     <title>Evans Mobile Detailing - Port Orange, FL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* General Styles */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +22,8 @@
             min-height: 100vh;
             padding: 20px;
         }
-        
+
+        /* Main container for the flyer */
         .flyer-container {
             width: 100%;
             max-width: 900px;
@@ -32,6 +34,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
+        /* Header Section */
         .header {
             background: linear-gradient(to right, #1a3a7f, #2c5aa0);
             color: white;
@@ -60,6 +63,7 @@
             color: #fff;
         }
         
+        /* Contact Information Bar */
         .contact-bar {
             background: #142a5c;
             padding: 15px;
@@ -84,6 +88,7 @@
             font-size: 1.3rem;
         }
         
+        /* Main Content Area */
         .content {
             padding: 30px;
             background: #f8faff;
@@ -119,6 +124,7 @@
             justify-content: center;
         }
         
+        /* Service Packages */
         .packages-list {
             display: flex;
             flex-direction: column;
@@ -129,7 +135,7 @@
             background: white;
             border-radius: 10px;
             padding: 20px;
-            /* Removed box-shadow and border */
+            border: 1px solid #e0e7ff;
         }
         
         .package-header {
@@ -156,6 +162,7 @@
         .package-features {
             list-style: none;
             padding: 0;
+            color: #555;
         }
         
         .package-features li {
@@ -170,13 +177,14 @@
             min-width: 20px;
         }
         
+        /* Maintenance Plans Section */
         .maintenance-section {
             background: white;
             border-radius: 10px;
             padding: 25px;
-            margin-top: 20px;
-            /* Removed box-shadow and border */
+            margin-top: 10px;
             grid-column: span 2;
+            border: 1px solid #e0e7ff;
         }
         
         .maintenance-title {
@@ -196,7 +204,6 @@
         .maintenance-plan {
             text-align: center;
             padding: 15px;
-            /* Removed background color */
         }
         
         .plan-name {
@@ -219,6 +226,95 @@
             font-style: italic;
         }
         
+        /* About Me Section */
+        .about-me-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 10px;
+            grid-column: span 2;
+            border: 1px solid #e0e7ff;
+        }
+
+        .about-text h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a3a7f;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Form Section */
+        .contact-form-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 10px;
+            grid-column: span 2;
+            border: 1px solid #e0e7ff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1a3a7f;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a3a7f;
+            box-shadow: 0 0 5px rgba(26, 58, 127, 0.5);
+        }
+
+        #contactForm button {
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        /* Form Status Messages */
+        #formStatus {
+            text-align: center;
+            padding: 40px 20px;
+            color: #1a3a7f;
+            display: none;
+        }
+         #formStatus i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+         }
+         #formStatus.success i {
+             color: #28a745;
+         }
+         #formStatus.error i {
+             color: #dc3545;
+         }
+        #formStatus h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Section */
         .footer {
             background: #1a3a7f;
             color: white;
@@ -251,35 +347,46 @@
             text-decoration: none;
             margin-top: 10px;
             transition: all 0.3s ease;
-            /* Removed box-shadow */
-            border: none; /* Removed border */
+            border: none;
+        }
+        .call-to-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
         }
         
-        .guarantee {
-            margin-top: 20px;
+        /* UPDATED: Renamed guarantee to service-info for clarity */
+        .service-info {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 0.95rem;
             opacity: 0.9;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 15px;
             flex-wrap: wrap;
             color: white;
         }
         
-        .guarantee-item {
+        .info-item {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             padding: 5px 10px;
         }
         
+        .info-item i {
+            color: #ffd700;
+        }
+        
+        /* Responsive Styles */
         @media (max-width: 768px) {
             .content {
                 grid-template-columns: 1fr;
             }
             
-            .maintenance-section {
+            .maintenance-section, .about-me-section, .contact-form-section {
                 grid-column: span 1;
             }
             
@@ -298,19 +405,7 @@
             }
         }
         
-        .print-notice {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #ffd700;
-            color: #1a3a7f;
-            padding: 8px 15px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 14px;
-            z-index: 10;
-        }
-        
+        /* Print Styles */
         @media print {
             body {
                 padding: 0;
@@ -323,7 +418,7 @@
                 margin: 0;
             }
             
-            .print-notice {
+            .contact-form-section, .footer, .about-me-section {
                 display: none;
             }
         }
@@ -331,7 +426,6 @@
 </head>
 <body>
     <div class="flyer-container">
-        <div class="print-notice">PRINT READY - FITS 8.5x11 PAPER</div>
         
         <div class="header">
             <div class="logo">
@@ -347,7 +441,7 @@
             </div>
             <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <span>logankent1906@gmail.com</span>
+                <span>owner@evandetailing.com</span>
             </div>
             <div class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
@@ -356,10 +450,10 @@
         </div>
         
         <div class="content">
+            <!-- Service sections -->
             <div class="section">
                 <h2 class="section-title">
-                    <i class="fas fa-car"></i>
-                    INTERIOR CLEANING
+                    <i class="fas fa-car"></i> INTERIOR CLEANING
                 </h2>
                 <div class="packages-list">
                     <div class="package">
@@ -374,7 +468,6 @@
                             <li><i class="fas fa-check"></i> Dashboard treatment</li>
                         </ul>
                     </div>
-                    
                     <div class="package">
                         <div class="package-header">
                             <div class="package-name">Full Interior Cleaning</div>
@@ -389,11 +482,9 @@
                     </div>
                 </div>
             </div>
-            
             <div class="section">
                 <h2 class="section-title">
-                    <i class="fas fa-car-side"></i>
-                    EXTERIOR CLEANING
+                    <i class="fas fa-car-side"></i> EXTERIOR CLEANING
                 </h2>
                 <div class="packages-list">
                     <div class="package">
@@ -402,16 +493,15 @@
                             <div class="package-price">$50-$90</div>
                         </div>
                         <ul class="package-features">
-                            <li><i class="fas fa-check"></i> Hand wash & dry</li>
+                            <li><i class="fas fa-check"></i> Hand wash &amp; dry</li>
                             <li><i class="fas fa-check"></i> Wheel and tire cleaning</li>
                             <li><i class="fas fa-check"></i> Spray wax finish</li>
                             <li><i class="fas fa-check"></i> Exterior trim care</li>
                         </ul>
                     </div>
-                    
                     <div class="package">
                         <div class="package-header">
-                            <div class="package-name">Wash & Wax</div>
+                            <div class="package-name">Wash &amp; Wax</div>
                             <div class="package-price">$140-$280</div>
                         </div>
                         <ul class="package-features">
@@ -423,11 +513,9 @@
                     </div>
                 </div>
             </div>
-            
             <div class="maintenance-section">
                 <h2 class="section-title">
-                    <i class="fas fa-calendar-alt"></i>
-                    MAINTENANCE PLANS
+                    <i class="fas fa-calendar-alt"></i> MAINTENANCE PLANS
                 </h2>
                 <div class="maintenance-title">After Your First Full Detail</div>
                 <div class="maintenance-grid">
@@ -446,6 +534,45 @@
                     * All maintenance plans include interior wipe-down and exterior wash
                 </div>
             </div>
+
+            <!-- About Me Section -->
+            <div class="about-me-section">
+                <h2 class="section-title">
+                    <i class="fas fa-user-circle"></i>
+                    MEET THE OWNER
+                </h2>
+                <div class="about-text">
+                    <h3>Hi, I'm Evan Kent.</h3>
+                    <p>At 16, I've turned a lifelong passion for cars and the satisfaction of seeing a perfect "before and after" into a professional service for my community here in Port Orange. Originally from Ohio, I brought my love for all things automotive with me when my family moved to Florida 6 years ago.</p>
+                    <p>I believe in treating every vehicle with the same care and meticulous attention to detail as if it were my own. My goal isn't just to clean your car—it's to deliver a result that I'm proud of and that you'll love. Thank you for trusting me with your vehicle.</p>
+                </div>
+            </div>
+
+            <!-- Functional Contact Form Section -->
+            <div class="contact-form-section">
+                <h2 class="section-title">
+                    <i class="fas fa-paper-plane"></i>
+                    SEND A MESSAGE
+                </h2>
+                <form id="contactForm" action="https://formspree.io/f/mwpbarjz" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g., John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="e.g., john.doe@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Question</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Ask us anything about our services!" required></textarea>
+                    </div>
+                    <button type="submit" class="call-to-action">Send Inquiry</button>
+                </form>
+                <div id="formStatus">
+                     <!-- Status content will be injected by JavaScript -->
+                </div>
+            </div>
         </div>
         
         <div class="footer">
@@ -454,21 +581,87 @@
             <a href="tel:3866757674" class="call-to-action">
                 <i class="fas fa-phone"></i> CALL NOW TO BOOK
             </a>
-            <div class="guarantee">
-                <div class="guarantee-item">
-                    <i class="fas fa-shield-alt"></i>
-                    Satisfaction Guaranteed
-                </div>
-                <div class="guarantee-item">
-                    <i class="fas fa-spray-can"></i>
-                    Professional Grade Products
-                </div>
-                <div class="guarantee-item">
+            <!-- UPDATED Section with Service Info & Requirements -->
+            <div class="service-info">
+                <div class="info-item">
                     <i class="fas fa-truck"></i>
                     Fully Mobile Service
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-faucet"></i>
+                    Water Hookup Required
+                </div>
+                 <div class="info-item">
+                    <i class="fas fa-plug"></i>
+                    Power Outlet Required
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-shield-alt"></i>
+                    Satisfaction Guaranteed
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- JavaScript for functional form submission -->
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                contactForm.style.transition = 'opacity 0.5s ease';
+                contactForm.style.opacity = '0';
+
+                setTimeout(() => {
+                    contactForm.style.display = 'none';
+                    formStatus.style.display = 'block';
+
+                    if (response.ok) {
+                        formStatus.innerHTML = `
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Thank You!</h3>
+                            <p>Your message has been sent. We'll get back to you shortly.</p>`;
+                        formStatus.className = 'success';
+                    } else {
+                        formStatus.innerHTML = `
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h3>Oops!</h3>
+                            <p>There was a problem submitting your form. Please try again.</p>`;
+                        formStatus.className = 'error';
+                    }
+                    
+                    formStatus.style.opacity = '0';
+                    setTimeout(() => {
+                        formStatus.style.transition = 'opacity 0.5s ease';
+                        formStatus.style.opacity = '1';
+                    }, 50);
+
+                }, 500);
+
+            } catch (error) {
+                 // Handle network errors
+                 contactForm.style.display = 'none';
+                 formStatus.style.display = 'block';
+                 formStatus.innerHTML = `
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Oops!</h3>
+                    <p>There was a network problem. Please check your connection and try again.</p>`;
+                 formStatus.className = 'error';
+            }
+        });
+    </script>
 </body>
 </html>
