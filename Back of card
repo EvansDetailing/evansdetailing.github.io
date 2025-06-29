@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evan's Detailing Business Card - Back</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1a3a7f;
+            --light-bg: #f8faff;
+            --text-dark: #2c3e50;
+        }
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff; /* Plain white background for easy capture */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            width: 525px;
+            height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            display: flex;
+            padding: 25px;
+            box-sizing: border-box;
+            background: var(--light-bg);
+            color: var(--text-dark);
+            align-items: center;
+        }
+        .contact-details {
+            width: 55%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .brand-name-back {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        .contact-detail i {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+        .divider {
+            width: 2px;
+            height: 80%;
+            background-color: #e0e7ff;
+            margin: 0 25px;
+        }
+        .qr-section {
+            width: 45%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .qr-section img {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .qr-section p {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="contact-details">
+            <div class="brand-name-back">EVANS MOBILE DETAILING</div>
+            <div class="contact-detail">
+                <i class="fas fa-phone"></i>
+                <span>(386) 675-7674</span>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-envelope"></i>
+                <span>owner@evandetailing.com</span>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Serving Port Orange, FL</span>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="qr-section">
+            <img src="https://i.postimg.cc/8Cp5Ngqk/My-QR-Code-2-1024.jpg" alt="QR Code to website">
+            <p>Scan for Website & Services</p>
+        </div>
+    </div>
+</body>
+</html>
