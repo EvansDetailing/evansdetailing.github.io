@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evan's Detailing Business Card - Front</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1a3a7f;
+            --secondary-blue: #2c5aa0;
+            --accent-gold: #ffd700;
+            --text-light: #ffffff;
+        }
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff; /* Plain white background for easy capture */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            width: 525px; 
+            height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            display: flex;
+            padding: 25px;
+            box-sizing: border-box;
+            color: var(--text-light);
+            position: relative;
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .brand-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .owner-info {
+            border-top: 2px solid var(--accent-gold);
+            padding-top: 20px;
+        }
+        .owner-name {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .owner-title {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="brand-name">EVANS MOBILE<br>DETAILING</div>
+        <div class="owner-info">
+            <div class="owner-name">Evan Kent</div>
+            <div class="owner-title">Owner &amp; Operator</div>
+        </div>
+    </div>
+</body>
+</html>
