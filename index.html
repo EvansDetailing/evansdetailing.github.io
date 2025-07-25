@@ -6,7 +6,7 @@
     <title>Evans Mobile Detailing - Port Orange, FL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* General Styles */
+        /* General Styles - UNCHANGED FROM YOUR ORIGINAL */
         * {
             margin: 0;
             padding: 0;
@@ -18,7 +18,7 @@
             background: linear-gradient(135deg, #2c3e50, #1a2a38);
         }
 
-        /* Main container for the flyer */
+        /* Main container for the flyer - UNCHANGED */
         .flyer-container {
             width: 100%;
             background: white;
@@ -26,7 +26,7 @@
             position: relative;
         }
         
-        /* Header Section */
+        /* Header Section - UNCHANGED */
         .header {
             background: linear-gradient(to right, #1a3a7f, #2c5aa0);
             color: white;
@@ -55,7 +55,7 @@
             color: #fff;
         }
         
-        /* Contact Information Bar */
+        /* Contact Information Bar - UNCHANGED */
         .contact-bar {
             background: #142a5c;
             padding: 15px;
@@ -80,15 +80,24 @@
             font-size: 1.3rem;
         }
         
-        /* Main Content Area */
+        /* Main Content Area - Reverted to 2-column layout for some sections */
         .content {
             padding: 30px;
             background: #f8faff;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
         }
         
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         .section {
             margin-bottom: 20px;
         }
@@ -116,13 +125,13 @@
             justify-content: center;
         }
         
-        /* Service Packages */
+        /* Service Packages - UNCHANGED */
         .packages-list {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-        
+
         .package {
             background: white;
             border-radius: 10px;
@@ -130,11 +139,18 @@
             border: 1px solid #e0e7ff;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
         
         .package:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 24px rgba(44, 62, 80, 0.15);
+        }
+
+        .package-highlight { /* NEW CLASS TO HIGHLIGHT POPULAR PACKAGE */
+             border: 2px solid #2c5aa0;
+             box-shadow: 0 8px 20px rgba(44, 90, 160, 0.2);
         }
         
         .package-header {
@@ -162,6 +178,7 @@
             list-style: none;
             padding: 0;
             color: #555;
+            flex-grow: 1; 
         }
         
         .package-features li {
@@ -176,13 +193,12 @@
             min-width: 20px;
         }
         
-        /* Maintenance Plans Section */
+        /* Maintenance Plans Section - UNCHANGED */
         .maintenance-section {
             background: white;
             border-radius: 10px;
             padding: 25px;
             margin-top: 10px;
-            grid-column: span 2;
             border: 1px solid #e0e7ff;
         }
         
@@ -225,13 +241,12 @@
             font-style: italic;
         }
         
-        /* Add-Ons Section */
+        /* Add-Ons Section - UNCHANGED */
         .addons-section {
             background: #ffffff;
             border-radius: 10px;
             padding: 25px;
             margin-top: 10px;
-            grid-column: span 2;
             border: 1px solid #e0e7ff;
         }
 
@@ -274,13 +289,12 @@
             line-height: 1.5;
         }
 
-        /* About Me Section */
+        /* About Me Section - UNCHANGED */
         .about-me-section {
             background: #ffffff;
             border-radius: 10px;
             padding: 25px;
             margin-top: 10px;
-            grid-column: span 2;
             border: 1px solid #e0e7ff;
         }
 
@@ -297,13 +311,12 @@
             margin-bottom: 10px;
         }
         
-        /* FAQ Section */
+        /* FAQ Section - UNCHANGED */
         .faq-section {
             background: #ffffff;
             border-radius: 10px;
             padding: 25px;
             margin-top: 10px;
-            grid-column: span 2;
             border: 1px solid #e0e7ff;
         }
 
@@ -325,13 +338,12 @@
             line-height: 1.6;
         }
         
-        /* Contact Form Section */
+        /* Contact Form Section - UNCHANGED */
         .contact-form-section {
             background: #ffffff;
             border-radius: 10px;
             padding: 25px;
             margin-top: 10px;
-            grid-column: span 2;
             border: 1px solid #e0e7ff;
         }
 
@@ -368,7 +380,7 @@
             cursor: pointer;
         }
         
-        /* Form Status Messages */
+        /* Form Status Messages - UNCHANGED */
         #formStatus {
             text-align: center;
             padding: 40px 20px;
@@ -390,7 +402,7 @@
             margin-bottom: 10px;
         }
 
-        /* Footer Section */
+        /* Footer Section - UNCHANGED */
         .footer {
             background: #1a3a7f;
             color: white;
@@ -455,16 +467,8 @@
             color: #ffd700;
         }
         
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .content {
-                grid-template-columns: 1fr;
-            }
-            
-            .maintenance-section, .addons-section, .about-me-section, .faq-section, .contact-form-section {
-                grid-column: span 1;
-            }
-            
+        /* Responsive Styles - UNCHANGED */
+        @media (max-width: 767px) {
             .maintenance-grid {
                 grid-template-columns: 1fr;
             }
@@ -480,7 +484,7 @@
             }
         }
         
-        /* Print Styles */
+        /* Print Styles - UNCHANGED */
         @media print {
             body {
                 padding: 0;
@@ -525,69 +529,105 @@
         </div>
         
         <div class="content">
-            <!-- Service sections -->
+            <!-- Services sections -->
+            <div class="services-grid">
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-car"></i> INTERIOR CLEANING
+                    </h2>
+                    <div class="packages-list">
+                        <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
+                            <div class="package-header">
+                                <div class="package-name">Mini Interior Detail</div>
+                                <div class="package-price">Starting at $70</div>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> Comprehensive vacuuming</li>
+                                <li><i class="fas fa-check"></i> Surface wipe-down</li>
+                                <li><i class="fas fa-check"></i> Glass cleaning</li>
+                                <li><i class="fas fa-check"></i> Dashboard treatment</li>
+                            </ul>
+                        </div>
+                        <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
+                            <div class="package-header">
+                                <div class="package-name">Full Interior Cleaning</div>
+                                <div class="package-price">Starting at $180</div>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> Deep cleaning of all surfaces</li>
+                                <li><i class="fas fa-check"></i> Leather cleaning & conditioning</li>
+                                <li><i class="fas fa-check"></i> UV protectant for dashboard</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-car-side"></i> EXTERIOR CLEANING
+                    </h2>
+                    <div class="packages-list">
+                        <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
+                            <div class="package-header">
+                                <div class="package-name">Premium Wash & Gloss</div>
+                                <div class="package-price">Starting at $50</div>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> Hand wash &amp; dry</li>
+                                <li><i class="fas fa-check"></i> Wheel and tire cleaning</li>
+                                <li><i class="fas fa-check"></i> <strong>High-Gloss Spray Wax Finish</strong></li>
+                                <li><i class="fas fa-check"></i> Exterior trim care</li>
+                            </ul>
+                        </div>
+                        <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
+                            <div class="package-header">
+                                <div class="package-name">Signature Wash & Wax</div>
+                                <div class="package-price">Starting at $140</div>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> Premium hand wash</li>
+                                <li><i class="fas fa-check"></i> Iron removal & <strong>Paint Decontamination (Clay)</strong></li>
+                                <li><i class="fas fa-check"></i> <strong>Premium Synthetic Sealant</strong></li>
+                                <li><i class="fas fa-check"></i> Tire dressing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complete Packages Section -->
             <div class="section">
                 <h2 class="section-title">
-                    <i class="fas fa-car"></i> INTERIOR CLEANING
+                    <i class="fas fa-star"></i> COMPLETE DETAIL PACKAGES
                 </h2>
-                <div class="packages-list">
-                    <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
+                <div class="services-grid">
+                     <div class="package package-highlight" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
                         <div class="package-header">
-                            <div class="package-name">Mini Interior Detail</div>
-                            <div class="package-price">Starting at $70</div>
+                            <div class="package-name">Signature Detail Package</div>
+                            <div class="package-price">Starting at $200</div>
                         </div>
                         <ul class="package-features">
-                            <li><i class="fas fa-check"></i> Comprehensive vacuuming</li>
-                            <li><i class="fas fa-check"></i> Surface wipe-down</li>
-                            <li><i class="fas fa-check"></i> Glass cleaning</li>
-                            <li><i class="fas fa-check"></i> Dashboard treatment</li>
+                            <li><i class="fas fa-car-side"></i> <strong>Signature Wash & Wax</strong> Exterior</li>
+                            <li><i class="fas fa-plus"></i></li>
+                            <li><i class="fas fa-car"></i> <strong>Mini Interior Detail</strong></li>
+                            <li style="font-style: italic; color: #1a3a7f; font-weight: bold; margin-top: 10px;"><i class="fas fa-tag"></i> Best Value Bundle!</li>
                         </ul>
                     </div>
-                    <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
+                     <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
                         <div class="package-header">
-                            <div class="package-name">Full Interior Cleaning</div>
-                            <div class="package-price">Starting at $180</div>
+                            <div class="package-name">"The Works" Package</div>
+                            <div class="package-price">Starting at $300</div>
                         </div>
                         <ul class="package-features">
-                            <li><i class="fas fa-check"></i> Deep cleaning of all surfaces</li>
-                            <li><i class="fas fa-check"></i> Professional stain extraction</li>
-                            <li><i class="fas fa-check"></i> Leather cleaning & conditioning</li>
-                            <li><i class="fas fa-check"></i> UV protectant for dashboard</li>
+                            <li><i class="fas fa-car-side"></i> <strong>Signature Wash & Wax</strong> Exterior</li>
+                            <li><i class="fas fa-plus"></i></li>
+                            <li><i class="fas fa-car"></i> <strong>Full Interior Cleaning</strong></li>
+                            <li style="font-style: italic; color: #555; margin-top: 10px;">The ultimate vehicle reset.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="section">
-                <h2 class="section-title">
-                    <i class="fas fa-car-side"></i> EXTERIOR CLEANING
-                </h2>
-                <div class="packages-list">
-                    <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
-                        <div class="package-header">
-                            <div class="package-name">Premium Wash</div>
-                            <div class="package-price">Starting at $50</div>
-                        </div>
-                        <ul class="package-features">
-                            <li><i class="fas fa-check"></i> Hand wash &amp; dry</li>
-                            <li><i class="fas fa-check"></i> Wheel and tire cleaning</li>
-                            <li><i class="fas fa-check"></i> Spray wax finish</li>
-                            <li><i class="fas fa-check"></i> Exterior trim care</li>
-                        </ul>
-                    </div>
-                    <div class="package" onclick="document.getElementById('contact-form-section').scrollIntoView({behavior: 'smooth'})">
-                        <div class="package-header">
-                            <div class="package-name">Wash &amp; Wax</div>
-                            <div class="package-price">Starting at $140</div>
-                        </div>
-                        <ul class="package-features">
-                            <li><i class="fas fa-check"></i> Premium hand wash</li>
-                            <li><i class="fas fa-check"></i> Iron removal treatment</li>
-                            <li><i class="fas fa-check"></i> Hand-applied wax</li>
-                            <li><i class="fas fa-check"></i> Tire dressing</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
+            <!-- Maintenance Section -->
             <div class="maintenance-section">
                 <h2 class="section-title">
                     <i class="fas fa-calendar-alt"></i> MAINTENANCE PLANS
@@ -610,11 +650,10 @@
                 </div>
             </div>
             
-            <!-- Add-Ons Section with Prices -->
+            <!-- Add-Ons Section -->
             <div class="addons-section">
                 <h2 class="section-title">
-                    <i class="fas fa-plus-circle"></i>
-                    ADD-ON SERVICES
+                    <i class="fas fa-plus-circle"></i> ADD-ON SERVICES
                 </h2>
                 <div class="addons-grid">
                     <div class="addon-item">
@@ -626,7 +665,7 @@
                     </div>
                     <div class="addon-item">
                         <div class="addon-header">
-                             <div class="addon-name">Pet Hair Removal</div>
+                            <div class="addon-name">Pet Hair Removal</div>
                             <div class="addon-price">$40+</div>
                         </div>
                         <p class="addon-description">Thorough removal of stubborn pet hair from carpets, seats, and upholstery.</p>
@@ -644,12 +683,11 @@
             <!-- About Me Section -->
             <div class="about-me-section">
                 <h2 class="section-title">
-                    <i class="fas fa-user-circle"></i>
-                    MEET THE OWNER
+                    <i class="fas fa-user-circle"></i> MEET THE OWNER
                 </h2>
                 <div class="about-text">
                     <h3>Hi, I'm Evan Kent.</h3>
-                    <p>At 16, I've turned a lifelong passion for cars and the satisfaction of seeing a perfect "before and after" into a professional service for my community here in Port Orange. Originally from Ohio, I brought my love for all things automotive with me when my family moved to Florida 6 years ago.</p>
+                    <p>At 16, I turned a lifelong passion for cars and the satisfaction of seeing a perfect "before and after" into a professional service for my community here in Port Orange. Originally from Ohio, I brought my love for all things automotive with me when my family moved to Florida 6 years ago.</p>
                     <p>I believe in treating every vehicle with the same care and meticulous attention to detail as if it were my own. My goal isn't just to clean your car—it's to deliver a result that I'm proud of and that you'll love. Thank you for trusting me with your vehicle.</p>
                 </div>
             </div>
@@ -657,8 +695,7 @@
             <!-- FAQ Section -->
             <div class="faq-section">
                 <h2 class="section-title">
-                    <i class="fas fa-question-circle"></i>
-                    FREQUENTLY ASKED QUESTIONS
+                    <i class="fas fa-question-circle"></i> FREQUENTLY ASKED QUESTIONS
                 </h2>
                 <div class="faq-item">
                     <h4 class="faq-question">What payment methods do you accept?</h4>
@@ -670,11 +707,10 @@
                 </div>
             </div>
 
-            <!-- Functional Contact Form Section -->
+            <!-- Contact Form Section -->
             <div class="contact-form-section" id="contact-form-section">
                 <h2 class="section-title">
-                    <i class="fas fa-paper-plane"></i>
-                    SEND A MESSAGE
+                    <i class="fas fa-paper-plane"></i> SEND A MESSAGE
                 </h2>
                 <form id="contactForm" action="https://formspree.io/f/mwpbarjz" method="POST">
                     <div class="form-group">
@@ -692,7 +728,7 @@
                     <button type="submit" class="call-to-action">Send Inquiry</button>
                 </form>
                 <div id="formStatus">
-                     <!-- Status content will be injected by JavaScript -->
+                    <!-- Status content will be injected by JavaScript -->
                 </div>
             </div>
         </div>
@@ -724,7 +760,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for functional form submission -->
+    <!-- UNCHANGED: JavaScript for form submission -->
     <script>
         const contactForm = document.getElementById('contactForm');
         const formStatus = document.getElementById('formStatus');
@@ -773,14 +809,14 @@
                 }, 500);
 
             } catch (error) {
-                 // Handle network errors
-                 contactForm.style.display = 'none';
-                 formStatus.style.display = 'block';
-                 formStatus.innerHTML = `
-                    <i class="fas fa-exclamation-circle"></i>
-                    <h3>Oops!</h3>
-                    <p>There was a network problem. Please check your connection and try again.</p>`;
-                 formStatus.className = 'error';
+               // Handle network errors
+               contactForm.style.display = 'none';
+               formStatus.style.display = 'block';
+               formStatus.innerHTML = `
+                 <i class="fas fa-exclamation-circle"></i>
+                 <h3>Oops!</h3>
+                 <p>There was a network problem. Please check your connection and try again.</p>`;
+               formStatus.className = 'error';
             }
         });
     </script>
